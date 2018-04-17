@@ -103,15 +103,15 @@ fi
 
 # Build Love2d
 echo ">>> Building Love2D"
-love2d_url="https://bitbucket.org/rude/love/downloads/love-0.10.2-linux-src.tar.gz"
+love2d_url="https://bitbucket.org/rude/love/downloads/love-11.1-linux-src.tar.gz"
 love2d_tgz="lovesrc.tgz"
-love2d_bin="/tmp/pilove-0.10.2-bin.tgz"
+love2d_bin="/tmp/pilove-11.1-bin.tgz"
 
 cd /tmp
 curl -L $love2d_url > $love2d_tgz
 cd /usr/local/games
 tar zxf /tmp/$love2d_tgz
-cd love-0.10.2
+cd love-11.1
 ./configure
 if [ "$?" != "0" ]; then
     echo ">>> Error: running Love2D configure rc=$?"
@@ -123,7 +123,7 @@ if [ "$?" != "0" ]; then
     exit 1
 fi
 cd ..
-tar -zcf $love2d_bin love-0.10.2
+tar -zcf $love2d_bin love-11.1
 echo ">>> Love2D build completed"
 
 # Raspi2png is a tool to take screenshots

@@ -1,3 +1,7 @@
+Version 0.5
+Date: Wed Apr 18, 2018
+  * Upgraded Love2d to 11.1
+
 Version 0.4
 Date: Sat Dec 31, 2016
   * Based on latest Raspbian kernel 4.4.20-v7+

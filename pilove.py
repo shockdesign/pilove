@@ -35,14 +35,14 @@ import time
 import xsysroot
 
 # Release version of PiLove
-__version__='0.4'
+__version__='0.5'
 
 
 def test_image(pilove):
 
     count_failed=0
     tests = [
-        { 'cmd' : '/usr/local/games/love-0.10.2/src/love --version', 'msg': 'Love app does not load' },
+        { 'cmd' : '/usr/local/games/love-11.1/src/love --version', 'msg': 'Love app does not load' },
         { 'cmd' : 'raspi2png --help', 'msg': 'Raspi2png could not be found' },
         { 'cmd' : 'dpkg -l | grep libsdl2:armhf', 'msg': 'libSDL2 did not install' },
         { 'cmd' : 'luarocks list | grep lua-periphery', 'msg': 'LUA periphery did not install' },
@@ -166,7 +166,7 @@ if __name__ == '__main__':
     rc=pilove.execute('chmod +x {}'.format(rclocal))
 
     # create a symlink to reach love
-    rc=pilove.execute('ln -sfv {} {}'.format('/usr/local/games/love-0.10.2/src/love', '/usr/local/bin/love'))
+    rc=pilove.execute('ln -sfv {} {}'.format('/usr/local/games/love-11.1/src/love', '/usr/local/bin/love'))
 
     # Install emacs with LUA syntax mode, and additional free TrueType fonts
     ttf_packages='fontconfig fonts-isabella fonts-georgewilliams fonts-linuxlibertine'
